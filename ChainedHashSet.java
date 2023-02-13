@@ -5,11 +5,13 @@ public class ChainedHashSet<E> implements AmhHashSet<E> {
     private LinkedList<E>[] storage;
     private int             m;
     private int             n;
+    private int cap;
     private int             collisions;
     
     public ChainedHashSet (int capacity) {
         // Initialize the hash set
-        storage = new LinkedList[10];
+        storage = new LinkedList[capacity];
+        cap = capacity;
 
     } // ChainedHashSet ()
 
@@ -86,8 +88,9 @@ public class ChainedHashSet<E> implements AmhHashSet<E> {
 
     private int hash (E key) {
 
-	return (key.hashCode() % 10);
+	return (key.hashCode() % cap);
 	
     }
 
 } // class ChainedHashSet
+
