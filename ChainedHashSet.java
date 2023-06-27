@@ -3,17 +3,15 @@ import java.util.LinkedList;
 public class ChainedHashSet<E> implements AmhHashSet<E> {
 
     private LinkedList<E>[] storage;
-    private int             m;
-    private int             n;
+    private int n;
     private int cap;
-    private int             collisions;
+    private int collisions;
     
     public ChainedHashSet (int capacity) {
-        // Initialize the hash set
         storage = new LinkedList[capacity];
         cap = capacity;
 
-    } // ChainedHashSet ()
+    } 
 
     public boolean insert (E key) {
         // Get the list for the specific hash
@@ -40,7 +38,7 @@ public class ChainedHashSet<E> implements AmhHashSet<E> {
 
         return false;
 
-    } // insert ()
+    }
 
     public boolean lookup (E key) {
         // Search chained hash set to see if a key has already been added
@@ -92,5 +90,4 @@ public class ChainedHashSet<E> implements AmhHashSet<E> {
 	
     }
 
-} // class ChainedHashSet
-
+}
